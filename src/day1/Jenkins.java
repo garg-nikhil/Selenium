@@ -8,7 +8,7 @@ public class Jenkins {
 	@Test
 	public void tutorial1()
 	{
-		
+		//Just writing it to test Github
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Nikhil\\Downloads\\lib\\chromedriver.exe");
 		WebDriver driver= new ChromeDriver();
 		driver.manage().window().maximize();
