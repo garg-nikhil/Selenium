@@ -10,9 +10,11 @@ public class Selenium {
 	
 	@Test
 	public void test() {
-	WebDriver driver = new ChromeDriver();
-	System.setProperty("webdriver.chrome.driver", "C:\\Project Selenium\\chromedriver.exe");
-	String URL = "www.amazon.in";
-	driver.navigate().to(URL);
 	
+	System.setProperty("webdriver.chrome.driver", "C:\\Project Selenium\\chromedriver.exe");
+	WebDriver driver = new ChromeDriver();
+	
+	String URL = "https://www.amazon.in";
+	driver.get(URL);
+	driver.close();
 }}
