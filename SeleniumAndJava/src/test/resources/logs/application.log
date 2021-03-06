@@ -13,3 +13,9 @@
 2021-03-06 20:35:38,830  INFO [main] FileUploadPopUp:15 - Fetching HTML.com
 2021-03-06 20:38:53,906  INFO [main] BaseClass:26 - Initializing chrome in incognito mode
 2021-03-06 20:38:58,577  INFO [main] FileUploadPopUp:15 - Fetching HTML.com
+2021-03-06 21:30:50,639  INFO [main] BaseClass:27 - Initializing chrome in incognito mode
+2021-03-06 21:30:55,766  INFO [main] FileUploadPopUp:16 - Fetching HTML.com
+2021-03-06 21:32:42,763  INFO [main] BaseClass:27 - Initializing chrome in incognito mode
+2021-03-06 21:32:47,012  INFO [main] FileUploadPopUp:16 - Fetching HTML.com
+2021-03-06 21:41:59,620  INFO [main] BaseClass:27 - Initializing chrome in incognito mode
+2021-03-06 21:42:03,630  INFO [main] FileUploadPopUp:16 - Fetching HTML.com

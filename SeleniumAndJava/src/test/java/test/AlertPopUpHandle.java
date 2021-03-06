@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class AlertPopUpHandle extends BaseClass{
 	// Initialize Log4j logs
-	Logger log = Logger.getLogger(AlertPopUpHandle.class.getName());
+	Logger log = Logger.getLogger(AlertPopUpHandle.class);
 	
 	@Test
 	public void alertDemo() {
