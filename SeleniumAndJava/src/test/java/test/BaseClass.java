@@ -12,6 +12,7 @@ import org.testng.annotations.BeforeTest;
 public class BaseClass {
 
 	public WebDriver driver;
+	// Initialize Log4j logs
 	Logger log = Logger.getLogger(BaseClass.class);
 
 	@BeforeTest
