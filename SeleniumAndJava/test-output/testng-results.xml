@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="16336" started-at="2021-03-05T16:37:18Z" finished-at="2021-03-05T16:37:34Z">
+  <suite name="Suite" duration-ms="25962" started-at="2021-03-06T08:56:31Z" finished-at="2021-03-06T08:56:56Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="16336" started-at="2021-03-05T16:37:18Z" finished-at="2021-03-05T16:37:34Z">
-      <class name="test.Selenium">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:test.Selenium@107a0d6]" name="beforeTest" is-config="true" duration-ms="5563" started-at="2021-03-05T22:07:18Z" finished-at="2021-03-05T22:07:24Z">
+    <test name="Test" duration-ms="25962" started-at="2021-03-06T08:56:31Z" finished-at="2021-03-06T08:56:56Z">
+      <class name="test.FileUploadPopUp">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:test.FileUploadPopUp@1a9e7c8]" name="beforeTest" is-config="true" duration-ms="1891" started-at="2021-03-06T14:26:31Z" finished-at="2021-03-06T14:26:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="test()[pri:0, instance:test.Selenium@107a0d6]" name="test" duration-ms="9340" started-at="2021-03-05T22:07:24Z" finished-at="2021-03-05T22:07:33Z">
+        <test-method status="PASS" signature="handlePopUp()[pri:0, instance:test.FileUploadPopUp@1a9e7c8]" name="handlePopUp" duration-ms="23359" started-at="2021-03-06T14:26:32Z" finished-at="2021-03-06T14:26:56Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:test.Selenium@107a0d6]" name="afterTest" is-config="true" duration-ms="1397" started-at="2021-03-05T22:07:33Z" finished-at="2021-03-05T22:07:34Z">
+        </test-method> <!-- handlePopUp -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:test.FileUploadPopUp@1a9e7c8]" name="afterTest" is-config="true" duration-ms="697" started-at="2021-03-06T14:26:56Z" finished-at="2021-03-06T14:26:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- test.Selenium -->
+      </class> <!-- test.FileUploadPopUp -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
