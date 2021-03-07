@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -41,31 +42,26 @@ public class TestNGUsecase {
 	@Test
 	public void googleLogoTest() {
 		
-		WebElement flag = driver.findElement(By.xpath("//img[@class='lnXdpd']"));
+		boolean flag = driver.findElement(By.xpath("//img[@class='lnXdpd']")).isDisplayed();
 		log.info("Checking google logo");
-		boolean a = flag.isDisplayed();
-		if(a==true)
-		{
-			System.out.println("Passed");
-		}
+		Assert.assertTrue(flag);
+		
 		
 	}
 	
 	@Test
 	public void googleTitleTest() {
 		String title = driver.getTitle();
-		System.out.println("Title:-" + title);
+		log.info("Title of current webpage is:- "+title);
+		Assert.assertEquals(title, "Google","Title is not matched");
 		
 	}
 	
 	@Test
 	public void googleMailTest() {
 		boolean flag = driver.findElement(By.xpath("//a[contains(text(),'Gmail')]")).isEnabled();
-		//assert.assertTrue(true);
-		if(flag==true)
-		{
-			System.out.println("Passed");
-		}
+		log.info("In mailtest message");
+		Assert.assertTrue(flag);										//This TC will only pass if flag's value comes out as true. If flag comes out as false then this tc will fail
 	}
 	
 	@AfterMethod
