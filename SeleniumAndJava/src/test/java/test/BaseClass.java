@@ -5,8 +5,10 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+
+import org.testng.annotations.BeforeMethod;
+
 
 
 public class BaseClass {
@@ -15,7 +17,7 @@ public class BaseClass {
 	// Initialize Log4j logs
 	Logger log = Logger.getLogger(BaseClass.class);
 
-	@BeforeTest
+	@BeforeMethod
 	public void openBrowser() {
 		
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Potato\\git\\Selenium\\SeleniumAndJava\\src\\test\\resources\\BrowseDrivers\\chromedriver.exe");
@@ -27,7 +29,7 @@ public class BaseClass {
 		log.info("Initializing chrome in incognito mode");
 	}
 
-	@AfterTest
+	@AfterMethod
 	public void afterTest() {
 		driver.quit();
 	}
