@@ -20,6 +20,18 @@ public class TestNGUsecase {
 	// Initialize Log4j logs
 	Logger log = Logger.getLogger(TestNGUsecase.class);
 	WebDriver driver;
+	
+/*	Flow of execution will be = 
+			@BeforeMethod
+			@Test
+			@AfterMethod
+			@BeforeMethod									//BeforeMethod and AfterMethod always gets executed at individual testcase level
+			@Test
+			@AfterMethod
+			@BeforeMethod
+			@Test
+			@AfterMethod
+*/
 		
 	@BeforeMethod
 	public void setup() {
