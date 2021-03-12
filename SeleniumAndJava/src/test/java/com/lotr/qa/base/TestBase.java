@@ -14,11 +14,11 @@ import org.testng.annotations.BeforeMethod;
 
 public class TestBase {
 	
-	static protected WebDriver driver;
+	protected static WebDriver driver;
 	static Properties prop;
-	public static String OS_NAME = System.getProperty("os.name");
-	public static String USER_DIR = System.getProperty("user.dir");
-	public static Logger log = Logger.getLogger(TestBase.class);
+	public static String OS_NAME = System.getProperty("os.name");								//Variable will print the underlying OS name
+	public static String USER_DIR = System.getProperty("user.dir");								//Variable will print the user directory
+	public static Logger log = Logger.getLogger(TestBase.class);								//Initializing the logger class
 	
 	public TestBase() {
 		
@@ -28,6 +28,7 @@ public class TestBase {
 		try {
 			FileInputStream a = new FileInputStream("C:\\Users\\Potato\\git\\Selenium\\SeleniumAndJava\\src\\test\\java\\com\\lotr\\qa\\config\\config.properties");
 			prop.load(a);
+			log.info("Properties file initialization is completed");
 		} catch (FileNotFoundException e) {
 				e.printStackTrace();
 		} catch (IOException e) {
@@ -43,14 +44,14 @@ public class TestBase {
 		String browserName = prop.getProperty("browser");
 		if (browserName.equalsIgnoreCase("chrome")) {
 			driver = getChromeBrowser();
-			log.info("Launching "+browserName);
+			log.info("Launching "+browserName+ " in " +OS_NAME);
 		} else if(browserName.equalsIgnoreCase("firefox")) {
 			driver = getFirefoxBrowser();
 			log.info("Launching "+browserName);
 		} 
 		
 		driver.manage().window().maximize();
-	
+		log.info("Maximizing the window");
 		
 		
 	}
@@ -98,6 +99,6 @@ public class TestBase {
 	@AfterMethod
 	public static void tearDown() {
 		driver.close();
-		log.info("Closing the driver instance: "+prop.getProperty("browser"));
+		log.info("Closing " +prop.getProperty("browser")+ " driver instance");
 	}
 }
