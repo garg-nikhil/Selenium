@@ -1,5 +1,13 @@
 package com.lotr.qa.pages;
 
-public class SignUpPage {
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import com.lotr.qa.base.TestBase;
+
+public class SignUpPage extends TestBase{
+	
+	@FindBy(xpath="//a[text()='Sign Up']")
+	WebElement SignUp;
 
 }

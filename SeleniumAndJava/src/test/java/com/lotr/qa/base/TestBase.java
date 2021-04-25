@@ -4,6 +4,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
+import javax.management.RuntimeErrorException;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -26,7 +29,7 @@ public class TestBase {
 		
 		prop = new Properties();
 		try {
-			FileInputStream a = new FileInputStream("C:\\Users\\Potato\\git\\Selenium\\SeleniumAndJava\\src\\test\\java\\com\\lotr\\qa\\config\\config.properties");
+			FileInputStream a = new FileInputStream("C:\\Users\\Potato\\git\\Selenium\\SeleniumAndJava\\src\\test\\resources\\testData\\config.properties");
 			prop.load(a);
 			log.info("Properties file initialization is completed");
 		} catch (FileNotFoundException e) {
@@ -52,6 +55,7 @@ public class TestBase {
 		
 		driver.manage().window().maximize();
 		log.info("Maximizing the window");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		
 	}
@@ -96,9 +100,33 @@ public class TestBase {
 		}
 		return path;
 	}
+	
+	public String getApplicationUrl() {
+		String url = prop.getProperty("url");
+		if(url != null) 
+			return url;
+		else throw new RuntimeException("url is not specified in the Configuration.properties file.");
+	}
+	
+	public String getUserName() {
+		String username = prop.getProperty("username");
+		if(username !=null)
+		return username;
+		else
+			throw new RuntimeException("Please mention username in configuration.properties file");
+	}
+	
+	public String getPassword() {
+		String password = prop.getProperty("password");
+		if(password !=null)
+		return password;
+		else
+			throw new RuntimeException("Please mention password in configuration.properties file");
+	}
+	
 	@AfterMethod
 	public static void tearDown() {
 		driver.close();
-		log.info("Closing " +prop.getProperty("browser")+ " driver instance");
+		log.info("Closing " + prop.getProperty("browser")+ " driver instance");
 	}
 }

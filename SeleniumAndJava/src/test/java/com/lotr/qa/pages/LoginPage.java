@@ -1,19 +1,41 @@
 package com.lotr.qa.pages;
 
+import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
 import com.lotr.qa.base.TestBase;
 
+
 public class LoginPage extends TestBase {
 	
-	public LoginPage() {
-		PageFactory.initElements(driver, this);
-	}
+	public static Logger log = Logger.getLogger(TestBase.class);
+		
+	@FindBy(xpath="//input[@name='email']")
+	WebElement Email;
 	
-	@Test
-	public void demo() {
-		driver.get("https://www.google.com/");
-	}
-
+	@FindBy(xpath="//input[@name='password']")
+	WebElement Password;
+	
+	@FindBy(xpath="//div[text()='Login']")
+	WebElement Login;
+	
+	public void login(){
+		
+		driver.navigate().to(""+getApplicationUrl());
+		log.info("Launching the website: ");
+		
+		Email.sendKeys(""+getUserName());
+		log.info("Entering Username");
+		
+		Password.sendKeys(""+getPassword());
+		log.info("Entering password");
+		
+		Login.click();
+		log.info("Clicking login");
+	}	
+	
 }
