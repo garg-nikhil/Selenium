@@ -23,17 +23,21 @@ public class LoginPage extends TestBase {
 	@FindBy(xpath="//div[text()='Login']")
 	WebElement Login;
 	
-	public void login(){
+	public void getWebsite(){
 		
 		driver.navigate().to(""+getApplicationUrl());
 		log.info("Launching the website: ");
-		
+	}
+	
+	public void submitDetails() {
 		Email.sendKeys(""+getUserName());
 		log.info("Entering Username");
 		
 		Password.sendKeys(""+getPassword());
 		log.info("Entering password");
-		
+	}
+	
+	public void clickLogin() {
 		Login.click();
 		log.info("Clicking login");
 	}	

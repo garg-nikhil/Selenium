@@ -10,6 +10,8 @@ public class HomePage extends TestBase{
 	@FindBy(xpath="//span[text()='Nikhil garg']")
 	WebElement UserName;
 	
-	
+	public void superUserName() {
+		
+	}
 
 }
