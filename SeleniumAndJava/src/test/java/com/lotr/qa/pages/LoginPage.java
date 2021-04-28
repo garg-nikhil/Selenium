@@ -25,7 +25,8 @@ public class LoginPage extends TestBase {
 	
 	public void getWebsite(){
 		
-		driver.navigate().to(""+getApplicationUrl());
+		System.out.println("URL: "+getApplicationUrl());
+		driver.get(""+getApplicationUrl());
 		log.info("Launching the website: ");
 	}
 	

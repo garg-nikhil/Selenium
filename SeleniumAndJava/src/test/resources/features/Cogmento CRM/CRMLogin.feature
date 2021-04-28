@@ -6,3 +6,4 @@ Feature: Application Under Test is CRM
     Given Launch CRM website
     When Username and password is provided
     Then user should be able to login successfully
+	

@@ -11,6 +11,7 @@ import cucumber.api.junit.Cucumber;
 		,glue={"com.lotr.qa.test"}
 		,plugin = {"pretty"}
 		,tags = {"@UItest"}
+	//	,dryRun = true									// if true it will check if the mapping between step definition and feature file is correct
 		,monochrome = true)
 
 public class TestRunner {}
